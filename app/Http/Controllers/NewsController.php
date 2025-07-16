@@ -63,7 +63,7 @@ class NewsController extends Controller
 
     public function indexHome()
     {
-        $news = News::latest()->take(4)->get();
+        $news = News::latest()->get();
         $aboutData = About::latest()->first(); // Ambil data terbaru dari tabel about
         return Inertia::render('HomePage', [
             'news' => $news,
